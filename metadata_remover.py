@@ -47,39 +47,76 @@ class MetadataRemover:
         ext = os.path.splitext(file_path)[1].lower()
         return ext in self.get_supported_extensions()
     
-    def show_metadata(self, file_path: str) -> None:
-        """Display metadata of an image file using Pillow."""
+    def get_metadata(self, file_path: str) -> dict:
+        """
+        Get metadata from a file.
+        
+        Args:
+            file_path: Path to the file
+            
+        Returns:
+            Dictionary containing the file's metadata
+        """
         if not PILLOW_AVAILABLE:
-            click.echo("Pillow library not available. Install with: pip install Pillow")
-            return
+            return {"error": "Pillow library not available. Install with: pip install Pillow"}
             
         try:
             with Image.open(file_path) as img:
-                click.echo(f"\nMetadata for {file_path}:")
+                metadata = {
+                    "file_info": {
+                        "format": img.format,
+                        "mode": img.mode,
+                        "size": img.size,
+                        "width": img.width,
+                        "height": img.height
+                    },
+                    "exif_data": {},
+                    "png_metadata": {}
+                }
                 
-                # Show basic info
-                click.echo(f"  Format: {img.format}")
-                click.echo(f"  Mode: {img.mode}")
-                click.echo(f"  Size: {img.size}")
-                
-                # Show EXIF data if available
+                # Get EXIF data if available
                 if hasattr(img, '_getexif') and img._getexif():
-                    click.echo("\n  EXIF Data:")
                     for tag_id, value in img._getexif().items():
                         tag = TAGS.get(tag_id, tag_id)
-                        click.echo(f"    {tag}: {value}")
-                else:
-                    click.echo("\n  No EXIF data found.")
-                    
-                # Show PNG metadata if available
-                if img.format == 'PNG' and 'metadata' in img.info:
-                    click.echo("\n  PNG Metadata:")
+                        metadata["exif_data"][str(tag)] = value
+                
+                # Get PNG metadata if available
+                if img.format == 'PNG' and hasattr(img, 'info') and img.info:
                     for key, value in img.info.items():
                         if key != 'exif':  # Skip binary EXIF data
-                            click.echo(f"    {key}: {value}")
-                            
+                            metadata["png_metadata"][str(key)] = str(value)
+                
+                return metadata
+                
         except Exception as e:
-            click.echo(f"Error reading metadata: {str(e)}")
+            return {"error": f"Error reading metadata: {str(e)}"}
+    
+    def show_metadata(self, file_path: str) -> None:
+        """Display metadata of an image file using Pillow."""
+        metadata = self.get_metadata(file_path)
+        if "error" in metadata:
+            click.echo(metadata["error"])
+            return
+            
+        click.echo(f"\nMetadata for {file_path}:")
+        
+        # Show basic info
+        if "file_info" in metadata:
+            click.echo("\nFile Information:")
+            for key, value in metadata["file_info"].items():
+                click.echo(f"  {key}: {value}")
+        
+        # Show EXIF data if available
+        if metadata.get("exif_data"):
+            click.echo("\nEXIF Data:")
+            for tag, value in metadata["exif_data"].items():
+                click.echo(f"  {tag}: {value}")
+        
+        # Show PNG metadata if available
+        if metadata.get("png_metadata"):
+            click.echo("\nPNG Metadata:")
+            for key, value in metadata["png_metadata"].items():
+                click.echo(f"  {key}: {value}")
     
     def remove_metadata(self, file_path: str, output_path: Optional[str] = None, 
                        overwrite: bool = False) -> Tuple[bool, str]:
