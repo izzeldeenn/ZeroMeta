@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Metadata Remover
-Comment=Remove metadata from files
-Exec=python3 /app/bin/metadata_remover.py
-Icon=com.example.metadataremover
-Terminal=true
-Categories=Utility;
