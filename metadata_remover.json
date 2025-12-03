@@ -1,0 +1,62 @@
+{
+    "app-id": "com.example.metadataremover",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.5",
+    "sdk": "org.kde.Sdk",
+    "command": "metadata_remover.py",
+    "finish-args": [
+        "--filesystem=home",
+        "--share=network"
+    ],
+    "modules": [
+        {
+            "name": "metadata-remover",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -D metadata_remover.py /app/bin/metadata_remover.py",
+                "install -D metadata_remover.desktop /app/share/applications/com.example.metadataremover.desktop",
+                "install -D icons/metadata-remover.svg /app/share/icons/hicolor/scalable/apps/com.example.metadataremover.svg"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "metadata_remover.py"
+                },
+                {
+                    "type": "file",
+                    "path": "metadata_remover.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "icons/metadata-remover.svg"
+                }
+            ]
+        },
+        {
+            "name": "python3-hachoir",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --no-deps --prefix=${FLATPAK_DEST} hachoir"
+            ],
+            "sources": [
+                {
+                    "type": "pip",
+                    "package": "hachoir"
+                }
+            ]
+        },
+        {
+            "name": "python3-click",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --no-deps --prefix=${FLATPAK_DEST} click"
+            ],
+            "sources": [
+                {
+                    "type": "pip",
+                    "package": "click"
+                }
+            ]
+        }
+    ]
+}
