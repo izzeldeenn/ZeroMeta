@@ -166,9 +166,6 @@ class MetadataRemoverGUI(QMainWindow):
         # Add tabs to main layout
         layout.addWidget(self.tabs, 1)
         
-        # Status bar
-        self.statusBar().showMessage("جاهز")
-        
         # Connect signals
         self.signals.status.connect(self.update_status)
         
