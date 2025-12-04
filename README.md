@@ -1,40 +1,40 @@
 <p align="center">
-  <a href="#arabic">🇸🇦 العربية</a> | 
-  <a href="#english">🇺🇸 English</a>
+  <a href="#arabic">العربية</a> | 
+  <a href="#english">English</a>
 </p>
 
 ---
 
-# <a name="arabic"></a> 🇸🇦 ZeroMeta — مساعد الخصوصية وإزالة البيانات الوصفية
+# <a name="arabic"></a> ZeroMeta — مساعد الخصوصية وإزالة البيانات الوصفية
 
 ZeroMeta هو مشروع مفتوح المصدر يهدف إلى مساعدتك في حماية خصوصيتك على الإنترنت عبر إزالة البيانات الوصفية (Metadata)، ومراقبة الملفات، وتشغيل طبقات متعددة من أدوات الأمان.  
 يعمل التطبيق بواجهتين: **سطر الأوامر (CLI)** و **واجهة رسومية عصرية (GUI)** مبنية باستخدام **Flet**، ومتاح على كل من Linux وWindows.
 
 ---
 
-## 🎯 **ما هو ZeroMeta؟**
+## **ما هو ZeroMeta؟**
 
 ZeroMeta ليس مجرد أداة لإزالة البيانات الوصفية، بل هو **مساعد خصوصية متكامل** يمكن توسيعه بسهولة عبر نظام "طبقات ZeroMeta" الذي يسمح بإضافة خدمات أمنية جديدة دون زيادة حجم التطبيق أو تحميل المستخدم مكونات لا يحتاجها.
 
 ---
 
-## 🧩 **طبقات ZeroMeta (ZeroMeta Layers)**
+## **طبقات ZeroMeta (ZeroMeta Layers)**
 
 طبقات ZeroMeta هي وحدات مستقلة (Modules) يمكن تثبيتها وتشغيلها وإدارتها بسهولة داخل التطبيق.  
 من أمثلتها:
 
-- 🧹 طبقة تنظيف البيانات الوصفية  
-- 👁️ طبقة مراقبة الملفات في الزمن الحقيقي  
-- 🔒 طبقة أدوات الخصوصية الشبكية  
-- 🚫 طبقة منع التسريبات  
-- 🎭 طبقة تنقية الملفات (Sanitizer)  
-- 🔍 طبقة فحص الخصوصية للملفات والمجلدات  
+- **طبقة تنظيف البيانات الوصفية**  
+- **طبقة مراقبة الملفات في الزمن الحقيقي**  
+- **طبقة أدوات الخصوصية الشبكية**  
+- **طبقة منع التسريبات**  
+- **طبقة تنقية الملفات (Sanitizer)**  
+- **طبقة فحص الخصوصية للملفات والمجلدات**  
 
 يتمكن المستخدم من تثبيت أو إلغاء وتحديث أي طبقة دون التأثير على التطبيق الرئيسي.
 
 ---
 
-## 🖥️ **الواجهة الرسومية (GUI)**
+## **الواجهة الرسومية (GUI)**
 
 واجهة ZeroMeta مبنية باستخدام **Flet**، وتتميز بـ:
 
@@ -48,7 +48,7 @@ ZeroMeta ليس مجرد أداة لإزالة البيانات الوصفية،
 
 ---
 
-## 🧰 **سطر الأوامر (CLI)**
+## **سطر الأوامر (CLI)**
 
 يوفر ZeroMeta واجهة أوامر سهلة للاستخدام:
 
@@ -60,9 +60,9 @@ ZeroMeta ليس مجرد أداة لإزالة البيانات الوصفية،
 
 ---
 
-## 🛠️ **التثبيت**
+## **التثبيت**
 
-### 1️⃣ **تثبيت ZeroMeta من المصدر**
+### **تثبيت ZeroMeta من المصدر**
 
 ```bash
 git clone https://github.com/<YOUR_USERNAME>/zerometa.git
@@ -70,17 +70,17 @@ cd zerometa
 pip install -r requirements.txt
 ```
 
-### ▶️ **تشغيل الواجهة الرسومية**
+### **تشغيل الواجهة الرسومية**
 ```bash
 python app.py
 ```
 
-### 🖥️ **تشغيل سطر الأوامر**
+### **تشغيل سطر الأوامر**
 ```bash
 zerometa --help
 ```
 
-## 🏗️ **هيكلة الطبقات داخل المشروع**
+## **هيكلة الطبقات داخل المشروع**
 
 لإضافة طبقة جديدة:
 ```
@@ -92,7 +92,7 @@ zerometa --help
 ```
 ويتعرف التطبيق عليها تلقائياً.  
 
-## 🔧 **التقنيات المستخدمة**
+## **التقنيات المستخدمة**
 
 - Python 3.10+
 - Flet
@@ -101,7 +101,7 @@ zerometa --help
 - piexif / exiftool
 - مكتبات إضافية لكل طبقة عند الحاجة
 
-## 📌 **خارطة الطريق**
+## **خارطة الطريق**
 
 - واجهة Dashboard متقدمة
 - إصدار أول طبقة Metadata Cleaner
@@ -110,39 +110,39 @@ zerometa --help
 - نظام تحديث تلقائي
 - مزامنة سحابية اختيارية
 
-## 🤝 **المساهمة**
+## **المساهمة**
 
 نرحّب بجميع المساهمين!  
 يمكنك فتح Issue أو إرسال Pull Request.
 
-## 📄 **الترخيص**
+## **الترخيص**
 
 المشروع مرخّص تحت MIT License.
 
 ---
 
-# <a name="english"></a> 🇺🇸 ZeroMeta — Privacy Assistant & Metadata Cleaner
+# <a name="english"></a> ZeroMeta — Privacy Assistant & Metadata Cleaner
 
 ZeroMeta is an open-source privacy assistant designed to help you protect your digital footprint by removing metadata, monitoring files, and running modular privacy-enhancing services.  
 It provides both a CLI and a modern GUI built with Flet, and supports Linux and Windows.
 
-## 🎯 What is ZeroMeta?
+## What is ZeroMeta?
 
 ZeroMeta is more than a metadata remover — it is an extensible privacy companion based on a modular system called ZeroMeta Layers that allows adding new privacy and security tools without bloating the core application.
 
-## 🧩 ZeroMeta Layers
+## ZeroMeta Layers
 
 ZeroMeta Layers are independent modules that can be installed, updated, enabled, or disabled.  
 Examples include:
 
-- 🧹 Metadata Cleaner
-- 👁️ Real-time File Watcher
-- 🔒 Network Privacy Tools
-- 🚫 Anti-Leak Monitor
-- 🎭 File Sanitizer
-- 🔍 Privacy Scanner
+- Metadata Cleaner
+- Real-time File Watcher
+- Network Privacy Tools
+- Anti-Leak Monitor
+- File Sanitizer
+- Privacy Scanner
 
-## 🖥️ GUI Features
+## GUI Features
 
 Built with Flet, offering:
 - Modern Material-style design
@@ -152,7 +152,7 @@ Built with Flet, offering:
 - Real-time monitoring
 - Advanced logging system
 
-## 🧰 CLI Features
+## CLI Features
 
 - Clean metadata from files
 - Monitor folders automatically
@@ -160,7 +160,7 @@ Built with Flet, offering:
 - Background mode
 - Detailed logs
 
-## 🛠️ Installation
+## Installation
 
 ```bash
 git clone https://github.com/<YOUR_USERNAME>/zerometa.git
@@ -178,7 +178,7 @@ python app.py
 zerometa --help
 ```
 
-## 🔧 Technologies
+## Technologies
 
 - Python 3.10+
 - Flet
@@ -186,10 +186,10 @@ zerometa --help
 - rich
 - EXIF processing libraries
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome!
 
-## 📄 License
+## License
 
 MIT License.
