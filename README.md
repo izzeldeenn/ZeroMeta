@@ -1,6 +1,6 @@
 <div align="center">
   <a href="#arabic">
-    <img src="https://raw.githubusercontent.com/yourusername/zerometa/main/assets/logo.png" alt="ZeroMeta Logo" width="200"/>
+    <img src="./logo.png" alt="ZeroMeta Logo" width="200"/>
   </a>
   
   <h1>ZeroMeta</h1>
