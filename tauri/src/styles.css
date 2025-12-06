@@ -526,7 +526,7 @@
   justify-content: center;
   cursor: pointer;
   z-index: 101;
-
+}
 /* Responsive styles */
 @media (max-width: 992px) {
   .content-container {
@@ -541,7 +541,7 @@
     transform: translateX(0);
   }
 }
-
+}
 @media (max-width: 768px) {
   .support-container {
     grid-template-columns: 1fr;
